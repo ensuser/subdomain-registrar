@@ -15,7 +15,7 @@ import domainnames from './domains.json';
 
 const tld = "eth";
 const ensAddress = "0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e";
-const referrerAddress = "0x0904Dac3347eA47d208F3Fd67402D039a3b99859";
+const referrerAddress = "0xd5D171a9AA125AF13216C3213B5A9Fc793FcCF2c";
 const defaultSubdomainRegistrar = "0xe65d8AAF34CB91087D1598e0A15B582F57F217d9";
 
 var SubdomainRegistrar = contract(subdomainregistrar_artifacts);
@@ -185,7 +185,7 @@ window.App = {
     $(".domainname").text(subdomain + "." + domain.name + "." + tld);
     $("#registeringmodal").modal('show');
     var tx = await registrarVersions[domain.version].register(domain, subdomain, web3.eth.accounts[0], referrerAddress, this.resolverAddress, info[1]);
-    $("#etherscan").attr("href", "https://etherscan.io/tx/" + tx.tx);
+    $("#etherscan").attr("href", "https://cn.etherscan.com/tx/" + tx.tx);
     $("#registeringmodal").modal('hide');
     $("#registeredmodal").modal('show');
     info[0] = '';

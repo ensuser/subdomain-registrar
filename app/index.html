@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
 
@@ -8,23 +8,44 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ENSnow</title>
-  </head>
+    <title>ENSNow - ENS 子域名注册工具</title>
+
+    <!-- Icon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://ensuser.com/icon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://ensuser.com/icon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://ensuser.com/icon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://ensuser.com/icon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://ensuser.com/icon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://ensuser.com/icon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://ensuser.com/icon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://ensuser.com/icon/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="https://ensuser.com/icon/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="https://ensuser.com/icon/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="https://ensuser.com/icon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://ensuser.com/icon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://ensuser.com/icon/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2f83cd">
+    <meta name="msapplication-TileImage" content="https://ensuser.com/icon/mstile-144x144.png">
+
+</head>
 
   <body id="page-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <img id="enslogo" src="img/ens.svg" />
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">ENSnow</a>
+        <img id="enslogo" src="https://ensuser.com/logo.png" />
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">ENSNow <span class="sub-title hidden-sm hidden-xs">ENS 子域名注册工具</span></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
+          导航
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" href="#aboutmodal">About</a>
+              <a class="nav-link" data-toggle="modal" href="#guidemodal">使用指南</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" href="#aboutmodal">常见问题</a>
             </li>
           </ul>
         </div>
@@ -35,7 +56,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10 text-center was-validated">
-            <h2 class="section-heading">Search for subdomains</h2>
+            <h2 class="section-heading">查询子域名</h2>
             <input type="search" id="name" class="form-control form-control-lg" />
           </div>
         </div>
@@ -53,11 +74,11 @@
     <footer class="footer">
       <div class="container">
         <div class="row text-muted">
-          <div class="col-lg-10">
-            Copyright 2017 <a href="mailto:arachnid@notdot.net">Nick Johnson</a>
+          <div class="col-6">
+            <a href="https://ensuser.com/" target="_blank">ENSUser.com</a>
           </div>
-          <div class="col-lg-2 text-right">
-            <a href="https://github.com/arachnid/subdomain-registrar/">Source on GitHub</a>
+          <div class="col-6 text-right">
+            愿您觅得心怡域名！
           </div>
         </div>
       </div>
@@ -67,11 +88,10 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Registering...</h5>
+            <h5 class="modal-title">注册中...</h5>
           </div>
           <div class="modal-body">
-            <p>Your registration request for <span class="domainname"></span> has been submitted.
-              Waiting for it to be mined...</p>
+            <p>注册 <span class="domainname"></span> 这一域名的请求已经发送至网络，请耐心等待交易被打包。</p>
           </div>
         </div>
       </div>
@@ -81,12 +101,10 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Subdomain registrar not available</h5>
+            <h5 class="modal-title">子域名注册器暂不可用</h5>
           </div>
           <div class="modal-body">
-            The subdomain registrar is not available on this network. Please
-              select the Ethereum main network in your browser or plugin and
-              reload the page.
+            当前网络无法使用子域名注册器。请在您的浏览器或插件中选择以太坊主网络并重新加载页面。
           </div>
         </div>
       </div>
@@ -96,35 +114,35 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Your browser is not web3 enabled</h5>
+            <h5 class="modal-title">您的浏览器未开启对 web3 的支持</h5>
           </div>
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
-                  <p>In order to register an ENS subdomain, your browser needs to support web3.</p>
+                  <p>想要注册 ENS 子域名，您的浏览器需要支持 web3，以下插件或应用可以实现对 web3 的支持。</p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4 text-center">
-                  <a href="https://trustwallet.com/"><img src="img/trust-logo.png"/></a>
+                  <a href="https://metamask.io/" target="_blank"><img src="img/metamask-logo.png"/></a>
                 </div>
                 <div class="col-md-4 text-center">
-                  <a href="https://metamask.io/"><img src="img/metamask-logo.png"/></a>
+                  <a href="https://token.im/" target="_blank"><img src="img/imtoken-logo.png"/></a>
                 </div>
                 <div class="col-md-4 text-center">
-                  <a href="https://github.com/ethereum/mist/releases"><img src="img/mist-logo.png"/></a>
+                  <a href="https://github.com/ethereum/mist/releases" target="_blank"><img src="img/mist-logo.png"/></a>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4 text-center">
-                  <p><a href="https://trustwallet.com/">Trustwallet</a></p>
+                  <p><a href="https://metamask.io/" target="_blank">Metamask 插件</a></p>
                 </div>
                 <div class="col-md-4 text-center">
-                  <p><a href="https://metamask.io/">Metamask plugin</a></p>
+                  <p><a href="https://trustwallet.com/" target="_blank">imToken 钱包</a></p>
                 </div>
                 <div class="col-md-4 text-center">
-                  <p><a href="https://github.com/ethereum/mist/releases">Mist browser</a></p>
+                  <p><a href="https://github.com/ethereum/mist/releases" target="_blank">Mist 浏览器</a></p>
                 </div>
               </div>
             </div>
@@ -137,17 +155,47 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Name Registered</h5>
+            <h5 class="modal-title">域名注册完成</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Congratulations, your domain <span class="domainname"></span> is now registered!</p>
+            <p>恭喜您，您的域名 <span class="domainname"></span> 已经注册完成！</p>
           </div>
           <div class="modal-footer">
-            <a class="btn btn-info" href="#" role="button" id="etherscan">View on Etherscan</a>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <a class="btn btn-info" href="#" role="button" id="etherscan" target="_blank">在 Etherscan 上查看相关信息</a>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" tabindex="-2" role="dialog" id="guidemodal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">ENSNow 使用指南</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+
+            <p class="about-answer">
+              1. 在安装了 Metamask 插件的浏览器或是诸如 imToken 的手机钱包中打开本页面。<br>
+              2. 在查询框中输入想要注册的域名标签。<br>
+              3. 在查询结果中选择一个满意的子域名并点击它。<br>
+              4. 钱包提示需要确认一笔注册子域名交易，点击确认。<br>
+              5. 交易被打包后，子域名注册就完成了。
+            </p>
+
+            <p class="about-more">注册子域名的详细教程请参阅 <a target="_blank" href="https://ensuser.com/guides/subdomain-registrar.html">这里</a>。</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
           </div>
         </div>
       </div>
@@ -157,40 +205,44 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">About ENSNow</h5>
+            <h5 class="modal-title">关于 ENSNow 的常见问题</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
           <div class="modal-body">
-            <h2>What is this?</h2>
-            <p>ENSNow is a webapp and smart contract that lets you name your Ethereum
-              wallet in 30 seconds, one click, and one transaction.</p>
+            <h2 class="about-title">ENSNow 是什么</h2>
+            <p class="about-answer">ENSNow 是一个帮助用户与 ENS 子域名注册器合约进行交互的网页应用，是一个用来注册子域名的工具。
+              查看 <a href="https://ensuser.com/guides/subdomain-registrar.html" target="_blank">这里</a> 了解更多。
+            </p>
 
-            <h2>How does it work?</h2>
-            <p>Enter a phrase to search for, and the app will show you all available
-              extensions for that phrase. Click the one you like best, and your
-              web3-enabled browser will pop up a transaction confirmation window.
-              Approve the transaction, and as soon as it's mined, the wallet you
-              sent the transaction from has a working ENS name! You can now give
-              anyone your new name in place of your wallet address.</p>
+            <h2 class="about-title">我们这里所说的子域名是几级域名</h2>
+            <p class="about-answer">这里的子域名一般是指 ENS 系统中类似 `hello.ensuser.eth` 的三级域名，其父域名 `ensuser.eth` 则属于二级域名。</p>
 
-            <h2>How can I trust the owners of these domains?</h2>
-            <p>In order to be listed on ENSNow, domain owners have to commit
-              ownership of their name to a smart contract. This contract prohibits
-              them from making any changes to the name until the permanent registrar
-              upgrade, planned for approximately May 2019.</p>
-            <p>This means that your names are secure until at least that date. At
-              that time, you should check back in to determine if the owner of your
-              domain has precommitted to a migration path to the permanent registrar
-              that will allow you to retain your name safely.</p>
+            <h2 class="about-title">子域名有哪些功能</h2>
+            <p class="about-answer">设置解析器和各种解析记录、设置它的子域名（四级域名），也可以转让所有权。</p>
 
-            <h2>How can I list my own domain?</h2>
-            <p>A detailed migration guide is underway, and a streamlined registration
-              process will follow.</p>
+            <h2 class="about-title">子域名价格是谁设定的，注册费用给谁</h2>
+            <p class="about-answer">子域名注册费用的设定者和收益人都其父域名原来的所有者。</p>
+
+            <h2 class="about-title">子域名需要每年续费吗</h2>
+            <p class="about-answer">不需要。</p>
+
+            <h2 class="about-title">子域名有哪些优点</h2>
+            <p class="about-answer">1. 节省费用； 2. 操作简便； 3. 资源丰富。</p>
+
+            <h2 class="about-title">这里的二级域名都可靠吗</h2>
+            <p class="about-answer">可靠。这些二级域名只受智能合约控制，您完全可以放心！</p>
+
+            <h2 class="about-title">我的域名可以加入这个列表吗</h2>
+            <p class="about-answer">我们欢迎您将自己的二级域名加入到这个列表，允许他人注册其子域名，同时您还可以设置子域名的注册费。详细信息可以联系微信 ensuser 。</p>
+
+            <p class="about-more">以上问题的详细回答可参阅 <a href="https://ensuser.com/guides/subdomain-registrar.html#常见问题" target="_blank">这里</a>。</p>
           </div>
+
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
           </div>
         </div>
       </div>
