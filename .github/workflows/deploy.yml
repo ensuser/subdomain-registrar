@@ -18,10 +18,9 @@ jobs:
         node-version: 10.x
     - name: Build Program
       run: |
-        npm install -g ganache-cli
         npm install -g truffle
         npm install
-        ganache-cli & truffle deploy
+        truffle build
         npm run build
     - uses: ensuser/setup-ossutil@master
       with:
