@@ -18,6 +18,8 @@ jobs:
         node-version: 10.x
     - name: Build Program
       run: |
+        npm install -g ganache-cli
+        npm install -g truffle
         npm install
         ganache-cli & truffle deploy
         npm run build
