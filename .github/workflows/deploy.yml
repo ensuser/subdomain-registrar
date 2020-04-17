@@ -19,6 +19,7 @@ jobs:
     - name: Build Program
       run: |
         npm install
+        truffle deploy
         npm run build
     - uses: ensuser/setup-ossutil@master
       with:
