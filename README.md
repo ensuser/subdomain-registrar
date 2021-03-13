@@ -1,4 +1,13 @@
-# ENS Subdomain registrar
+# ENS Subdomain registrar | ENS 子域名注册器
+
+## 说明
+
+该注册器是由 ENSUser 成员在[原代码](https://github.com/ensdomains/subdomain-registrar)的基础上进行了操作界面的汉化，并针对中国大陆的网络环境进行了一定的优化，方便中国用户使用。
+
+要使用该子域名注册器可以在以下两种方式选择一种：
+
+1. 直接使用我们利用这套代码部署好的网页程序 [now.ensuser.com](https://now.ensuser.com/) 。
+2. 将该代码仓库下载到本地，并按照后面的操作说明在您的本地环境中使用。
 
 [![Build Status](https://travis-ci.org/ensdomains/subdomain-registrar.svg?branch=master)](https://travis-ci.org/ensdomains/subdomain-registrar) [![License](https://img.shields.io/badge/License-BSD--2--Clause-blue.svg)](LICENSE)
 
