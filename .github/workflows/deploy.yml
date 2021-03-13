@@ -22,7 +22,7 @@ jobs:
         npm install
         truffle build
         npm run build
-    - uses: liubenbencom/setup-ossutil@master
+    - uses: hibbb/setup-ossutil@master
       with:
         endpoint: "oss-cn-beijing.aliyuncs.com"
         access-key-id: ${{ secrets.ACCESS_KEY_ID }}
